@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gateway Scholar | Ethical Thesis & Journal Support</title>
+    <style id="theme-vars">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  --gs-primary: #2f4f4f;
+  --gs-primary-rgb: 47, 79, 79;
+  --gs-primary-strong: #243d3d;
+  --gs-primary-soft: #d7e3df;
+  --gs-primary-soft-rgb: 215, 227, 223;
+  --gs-primary-foreground: #fffef9;
+  --gs-background: #fffef9;
+  --gs-background-alt: #f6f1e7;
+  --gs-neutral-warm: #efe6d8;
+  --gs-neutral-warm-rgb: 239, 230, 216;
+  --gs-neutral-shell: #fffcf5;
+  --gs-neutral-shell-rgb: 255, 252, 245;
+  --gs-neutral-deep: #8a7b60;
+  --gs-neutral-deep-rgb: 138, 123, 96;
+  --gs-white-rgb: 255, 255, 255;
+  --gs-overlay-rgb: 23, 31, 31;
+  --gs-overlay-soft-rgb: 37, 55, 55;
+  --gs-surface: rgba(255, 255, 255, 0.78);
+  --gs-foreground: #3a3633;
+  --gs-muted: #6e675f;
+  --gs-border: rgba(96, 86, 72, 0.16);
+  --gs-shadow: 0 18px 48px rgba(38, 42, 43, 0.05);
+  --gs-shadow-soft: 0 10px 24px rgba(38, 42, 43, 0.04);
+  --gs-radius-sm: 12px;
+  --gs-radius-md: 16px;
+  --gs-radius-lg: 16px;
+  --gs-surface-strong: #fbf7ef;
+  --gs-border-strong: rgba(47, 79, 79, 0.18);
+  --gs-content-width: 1180px;
+  --gs-section-space: clamp(4.5rem, 8vw, 7rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--gs-foreground);
+  background:
+    radial-gradient(circle at top right, rgba(var(--gs-neutral-warm-rgb), 0.34), transparent 24%),
+    radial-gradient(circle at left center, rgba(47, 79, 79, 0.08), transparent 28%),
+    var(--gs-background);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+.button-link {
+  font: inherit;
+}
+
+.gs-page {
+  min-height: 100vh;
+}
+
+.gs-container {
+  width: min(calc(100% - 2rem), var(--gs-content-width));
+  margin: 0 auto;
+}
+
+.gs-section {
+  padding: var(--gs-section-space) 0;
+}
+
+.gs-section--tinted {
+  background: linear-gradient(180deg, rgba(246, 241, 231, 0.9), rgba(255, 254, 249, 0.6));
+}
+
+.gs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid rgba(var(--gs-primary-rgb), 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--gs-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gs-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(var(--gs-primary-rgb), 0.34);
+  display: inline-block;
+}
+
+.gs-title {
+  margin: 0 0 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.35rem, 4.6vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.gs-section-title {
+  margin: 0 0 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.2vw, 3.45rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.gs-lead {
+  margin: 0;
+  font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+  color: var(--gs-muted);
+}
+
+.gs-sublead {
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  color: var(--gs-muted);
+}
+
+.gs-nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 254, 249, 0.72);
+  border-bottom: 1px solid rgba(var(--gs-primary-rgb), 0.08);
+}
+
+.gs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 78px;
+}
+
+.gs-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.gs-brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,0.92), transparent 36%),
+    linear-gradient(145deg, var(--gs-primary-soft), var(--gs-primary));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55), var(--gs-shadow-soft);
+}
+
+.gs-brand-copy strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.gs-brand-copy span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gs-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gs-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.gs-nav-links a {
+  color: var(--gs-muted);
+  font-size: 0.96rem;
+  transition: color 0.25s ease;
+}
+
+.gs-nav-links a:hover,
+.gs-nav-links a:focus-visible {
+  color: var(--gs-primary);
+}
+
+.gs-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.88rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--gs-primary-rgb), 0.16);
+  background: rgba(255,255,255,0.65);
+  font-weight: 700;
+}
+
+.gs-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(5rem, 10vw, 7.5rem);
+}
+
+.gs-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(2.2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.gs-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.gs-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gs-button,
+.gs-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 58px;
+  padding: 0 1.7rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.gs-button {
+  color: var(--gs-primary-foreground);
+  background: linear-gradient(135deg, var(--gs-primary), var(--gs-primary-strong));
+  box-shadow: 0 18px 35px rgba(var(--gs-primary-rgb), 0.2);
+}
+
+.gs-button:hover,
+.gs-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 42px rgba(var(--gs-primary-rgb), 0.26);
+}
+
+.gs-button-secondary {
+  background: rgba(255,255,255,0.76);
+  border: 1.5px solid rgba(var(--gs-primary-rgb), 0.18);
+  color: var(--gs-primary);
+}
+
+.gs-button-secondary:hover,
+.gs-button-secondary:focus-visible {
+  transform: translateY(-2px);
+  background: var(--gs-primary);
+  color: var(--gs-primary-foreground);
+}
+
+.gs-trust-line {
+  margin-top: 1.4rem;
+  color: var(--gs-muted);
+  font-size: 0.95rem;
+}
+
+.gs-hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.65rem 0 0;
+}
+
+.gs-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid var(--gs-border);
+  color: var(--gs-foreground);
+  box-shadow: var(--gs-shadow-soft);
+  font-size: 0.92rem;
+}
+
+.gs-hero-visual {
+  position: relative;
+}
+
+.gs-hero-card {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--gs-shadow);
+  background: var(--gs-neutral-warm);
+  min-height: 560px;
+}
+
+.gs-hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(23, 29, 31, 0.06), rgba(23, 29, 31, 0.38)),
+    linear-gradient(180deg, transparent 45%, rgba(255,254,249,0.2) 100%);
+  pointer-events: none;
+}
+
+.gs-hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gs-floating-note,
+.gs-stat-card {
+  position: absolute;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 254, 249, 0.86);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: var(--gs-shadow-soft);
+}
+
+.gs-floating-note {
+  left: -1rem;
+  bottom: 1.5rem;
+  max-width: 250px;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+}
+
+.gs-floating-note strong,
+.gs-stat-card strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.gs-floating-note span,
+.gs-stat-card span {
+  color: var(--gs-muted);
+  font-size: 0.88rem;
+}
+
+.gs-stat-card {
+  top: 1.25rem;
+  right: -1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  min-width: 180px;
+}
+
+.gs-kicker {
+  color: var(--gs-primary);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.gs-two-col,
+.gs-card-grid,
+.gs-process-grid,
+.gs-integrity-grid,
+.gs-receive-list {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.gs-two-col {
+  grid-template-columns: 1fr;
+}
+
+.gs-card-grid,
+.gs-process-grid,
+.gs-integrity-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gs-panel {
+  padding: clamp(1.55rem, 3vw, 2.15rem);
+  border-radius: var(--gs-radius-md);
+  border: 1px solid var(--gs-border);
+  background: var(--gs-surface);
+  box-shadow: var(--gs-shadow-soft);
+}
+
+.gs-panel--quote {
+  background:
+    linear-gradient(135deg, rgba(var(--gs-primary-rgb), 0.08), rgba(var(--gs-neutral-warm-rgb), 0.24)),
+    var(--gs-surface);
+  border-color: rgba(var(--gs-primary-rgb), 0.14);
+}
+
+.gs-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: var(--gs-radius-md);
+  border: 1px solid var(--gs-border);
+  background: rgba(255,255,255,0.76);
+  box-shadow: var(--gs-shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--gs-shadow);
+  border-color: rgba(var(--gs-primary-rgb), 0.22);
+}
+
+.gs-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background: rgba(var(--gs-primary-rgb), 0.08);
+  color: var(--gs-primary);
+}
+
+.gs-card-icon svg,
+.gs-list-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.gs-card h3,
+.gs-process-card h3,
+.gs-final-cta h2 {
+  margin: 0 0 0.65rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.gs-card p,
+.gs-process-card p,
+.gs-panel p,
+.gs-list-copy,
+.gs-final-cta p {
+  margin: 0;
+  color: var(--gs-muted);
+}
+
+.gs-receive-item,
+.gs-integrity-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.2rem 1.35rem;
+  border-radius: var(--gs-radius-sm);
+  background: rgba(255,255,255,0.78);
+  border: 1px solid var(--gs-border);
+  box-shadow: var(--gs-shadow-soft);
+}
+
+.gs-list-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--gs-primary-rgb), 0.08);
+  color: var(--gs-primary);
+}
+
+.gs-process-card {
+  position: relative;
+  padding: 2rem 1.9rem 1.85rem;
+  border-radius: var(--gs-radius-md);
+  border: 1px solid var(--gs-border);
+  background: rgba(255,255,255,0.72);
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.gs-step-number {
+  position: absolute;
+  top: 0.75rem;
+  right: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(var(--gs-primary-rgb), 0.08);
+}
+
+.gs-capacity-note {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--gs-muted);
+  font-style: italic;
+}
+
+.gs-integrity-shell {
+  text-align: center;
+}
+
+.gs-shield {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(var(--gs-primary-rgb), 0.14), rgba(var(--gs-primary-soft-rgb), 0.72));
+  color: var(--gs-primary);
+}
+
+.gs-shield svg {
+  width: 40px;
+  height: 40px;
+}
+
+.gs-final-cta {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(var(--gs-primary-soft-rgb), 0.28), transparent 28%),
+    linear-gradient(135deg, var(--gs-primary), var(--gs-primary-strong));
+  color: var(--gs-primary-foreground);
+  border-radius: var(--gs-radius-lg);
+  padding: clamp(2.25rem, 5vw, 4rem);
+  box-shadow: 0 28px 55px rgba(var(--gs-primary-rgb), 0.22);
+}
+
+.gs-final-cta p,
+.gs-final-cta .gs-contact-line,
+.gs-final-cta .gs-trust-line {
+  color: rgba(255, 254, 249, 0.88);
+}
+
+.gs-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.8rem 0 1.2rem;
+}
+
+.gs-button-light,
+.gs-button-ghost-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 1.55rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.gs-button-light {
+  color: var(--gs-primary);
+  background: var(--gs-primary-foreground);
+  box-shadow: 0 16px 36px rgba(18, 28, 28, 0.15);
+}
+
+.gs-button-ghost-light {
+  border: 1.4px solid rgba(255,255,255,0.45);
+  color: var(--gs-primary-foreground);
+  background: rgba(255,255,255,0.08);
+}
+
+.gs-button-light:hover,
+.gs-button-ghost-light:hover {
+  transform: translateY(-2px);
+}
+
+.gs-contact-line {
+  font-size: 0.98rem;
+}
+
+.gs-footer {
+  padding: 2rem 0 3.5rem;
+  text-align: center;
+  color: var(--gs-muted);
+  font-size: 0.92rem;
+}
+
+.gs-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: gs-fade-up 0.8s ease forwards;
+}
+
+.gs-delay-1 { animation-delay: 0.08s; }
+.gs-delay-2 { animation-delay: 0.16s; }
+.gs-delay-3 { animation-delay: 0.24s; }
+.gs-delay-4 { animation-delay: 0.32s; }
+
+@keyframes gs-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .gs-nav-links {
+    display: none;
+  }
+
+  .gs-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-card-grid,
+  .gs-process-grid,
+  .gs-integrity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-hero-card {
+    min-height: 460px;
+  }
+
+  .gs-stat-card {
+    right: 1rem;
+  }
+
+  .gs-floating-note {
+    left: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .gs-container {
+    width: min(calc(100% - 1.25rem), var(--gs-content-width));
+  }
+
+  .gs-nav {
+    min-height: 72px;
+  }
+
+  .gs-nav-cta {
+    display: none;
+  }
+
+  .gs-hero {
+    padding-top: 2rem;
+  }
+
+  .gs-hero-card {
+    min-height: 380px;
+  }
+
+  .gs-floating-note,
+  .gs-stat-card {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .gs-hero-actions,
+  .gs-final-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--gs-background);
+    --color-foreground: var(--gs-foreground);
+    --color-primary: var(--gs-primary);
+    --color-primary-foreground: var(--gs-primary-foreground);
+    --color-muted: var(--gs-muted);
+    --color-border: var(--gs-border);
+  }
+  @layer base {
+    body { background: var(--gs-background); color: var(--gs-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body data-page="index">
+  <div class="gs-page">
+    <div data-site-header></div>
+
+    <main id="top">
+      <section class="gs-hero" id="hero">
+        <div class="gs-container">
+          <div class="gs-hero-grid">
+            <div class="gs-hero-copy gs-reveal">
+              <span class="gs-eyebrow">
+                Editorial guidance for serious academic drafts
+                <span class="gs-divider-dot" aria-hidden="true"></span>
+                Ethical support only
+              </span>
+              <h1 class="gs-title">Welcome to Gateway Scholar</h1>
+              <p class="gs-lead">We help MSc/PhD and STEM/Engineering students strengthen thesis chapters and journal manuscripts through ethical editing, supervisor-style feedback, formatting, and coaching — without changing your research.</p>
+              <p class="gs-hero-support">If you feel stuck, overwhelmed, or unsure what your supervisor/journal wants, we'll give you a clear plan and fix the writing issues that block acceptance.</p>
+
+              <div class="gs-hero-proof" aria-label="Service proof points">
+                <span class="gs-chip">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 8.5h12M6 12h8m-8 3.5h6M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Diagnostic fee clarity
+                </span>
+                <span class="gs-chip">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Turnaround roadmap
+                </span>
+                <span class="gs-chip">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3l7 3v5c0 4.5-3 7.9-7 10-4-2.1-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="m9.5 11.8 1.7 1.7 3.6-4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Ethical editorial support
+                </span>
+              </div>
+
+              <div class="gs-hero-actions">
+                <a class="gs-button" href="#final-cta">Register Your Project</a>
+                <a class="gs-button-secondary" href="#contact">Book a Call</a>
+              </div>
+
+              <p class="gs-trust-line">No ghostwriting • No fake data • No fake references • You remain the author</p>
+
+              <div class="gs-proof-ribbon">
+                <span class="gs-proof-dot" aria-hidden="true"></span>
+                Supervisor-style comments, clean structure, and submission-ready clarity
+              </div>
+            </div>
+
+            <div class="gs-hero-visual gs-reveal gs-delay-1">
+              <div class="gs-proof-sheet" aria-hidden="true">
+                <small>Diagnostic</small>
+                <p>Paid first review with clear issues, fix priorities, and package direction.</p>
+                <div class="gs-annotation-line"></div>
+                <div class="gs-note-grid">
+                  <div class="gs-note-row">
+                    <strong>Starting point</strong>
+                    <span class="gs-mark">$50</span>
+                  </div>
+                  <div class="gs-note-row">
+                    <strong>Outcome</strong>
+                    <span class="gs-mark gs-mark--soft">Plan + timeline</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gs-hero-card">
+                <img src="../assets/hero-main.jpg" alt="A refined academic workspace with thesis pages and notes spread across a wooden desk.">
+                <div class="gs-card-accent" aria-hidden="true">
+                  <div>
+                    <strong>Editorial review</strong>
+                    <span>Chapter logic, argument flow, and clarity fixes</span>
+                  </div>
+                  <div>
+                    <strong>Formatting support</strong>
+                    <span>APA / IEEE / Elsevier alignment</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gs-stat-card" aria-hidden="true">
+                <strong>Scope stays yours</strong>
+                <span>We strengthen writing, structure, and presentation — not the research itself.</span>
+              </div>
+
+              <div class="gs-proof-sheet-secondary" aria-hidden="true">
+                <small>Clarity note</small>
+                <p>Recommended turnaround and package logic are mapped before full work begins.</p>
+                <div class="gs-annotation-line"></div>
+                <div class="gs-note-grid">
+                  <div class="gs-note-row">
+                    <strong>Timeline</strong>
+                    <span class="gs-mark">Stated up front</span>
+                  </div>
+                  <div class="gs-note-row">
+                    <strong>Integrity</strong>
+                    <span class="gs-mark gs-mark--soft">Non-negotiable</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gs-floating-note" aria-hidden="true">
+                <strong>Feedback that feels supervisory</strong>
+                <span>Margin-style comments explain what to fix, why it matters, and what to do next.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs-section" id="who-we-are">
+        <div class="gs-container">
+          <div class="gs-section-head gs-reveal">
+            <div>
+              <span class="gs-kicker">Who We Are</span>
+              <h2 class="gs-section-title">A warm, rigorous editorial partner for serious student researchers.</h2>
+            </div>
+            <p class="gs-section-note">Gateway Scholar is built for students who already have real work in progress and need credible support to make that work clearer, stronger, and submission-ready.</p>
+          </div>
+
+          <div class="gs-intro-grid">
+            <article class="gs-panel gs-editorial-panel gs-reveal gs-delay-1">
+              <p class="gs-sublead">We operate like an experienced academic reviewer beside you: diagnosing structural weakness, tightening argument flow, refining chapter logic, and translating vague feedback into an actionable plan. The tone is human and supervisory, not generic and transactional.</p>
+              <div class="gs-mini-points" aria-label="Core service principles">
+                <div class="gs-mini-point">
+                  <span class="gs-bullet-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Editorial, not ghostwritten</strong>
+                    <p>Your research stays yours. We strengthen communication, presentation, and compliance.</p>
+                  </div>
+                </div>
+                <div class="gs-mini-point">
+                  <span class="gs-bullet-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Built for complex STEM writing</strong>
+                    <p>Engineering and technical drafts need logical sequencing, methodological clarity, and disciplined tone.</p>
+                  </div>
+                </div>
+                <div class="gs-mini-point">
+                  <span class="gs-bullet-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Clear next steps</strong>
+                    <p>Every review should leave you knowing exactly what blocks acceptance and what should happen next.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <aside class="gs-panel gs-panel--quote gs-reveal gs-delay-2">
+              <blockquote class="gs-quote-block">
+                <p>Premium academic support should feel thoughtful, honest, and specific — like a capable supervisor reading closely.</p>
+                <span>That is the standard Gateway Scholar works to.</span>
+              </blockquote>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs-section gs-section--tinted" id="what-we-do">
+        <div class="gs-container">
+          <div class="gs-section-head gs-reveal">
+            <div>
+              <span class="gs-kicker">What We Do</span>
+              <h2 class="gs-section-title">Focused support for chapters, manuscripts, compliance, and presentation quality.</h2>
+            </div>
+            <div class="gs-section-note">
+              Each service is designed to improve acceptance-readiness while keeping the underlying research fully authored by you.
+            </div>
+          </div>
+
+          <div class="gs-card-grid">
+            <article class="gs-card gs-reveal gs-delay-1">
+              <div class="gs-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 4h8l4 4v12H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M15 4v4h4M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Thesis/Dissertation Support</h3>
+              <p>Chapter-level editing, structure, coherence, supervisor-style comments.</p>
+              <div class="gs-card-footer">Built for chapter-by-chapter strengthening.</div>
+            </article>
+
+            <article class="gs-card gs-reveal gs-delay-2">
+              <div class="gs-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M5 6.5h14M5 12h14M5 17.5h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M17.5 15.5 20 18l-2.5 2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Journal Article Support</h3>
+              <p>Argument flow, methods/results narration, submission-ready language polishing.</p>
+              <div class="gs-card-footer">Sharper storytelling for publishable manuscripts.</div>
+            </article>
+
+            <article class="gs-card gs-reveal gs-delay-3">
+              <div class="gs-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 5h10M7 9h10M7 13h6M5 19h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Formatting &amp; Style Compliance</h3>
+              <p>APA / IEEE / Elsevier formatting and reference consistency.</p>
+              <div class="gs-card-footer">Cleaner presentation for supervisor and journal expectations.</div>
+            </article>
+
+            <article class="gs-card gs-reveal gs-delay-4">
+              <div class="gs-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4.5 17 9 12.5l3 3L19.5 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M19.5 13V8h-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                </svg>
+              </div>
+              <h3>Figures &amp; Tables (Data Provided)</h3>
+              <p>Publication-ready plots, multi-panel figures, and clean tables.</p>
+              <div class="gs-card-footer">Visual support based on your real data and outputs.</div>
+            </article>
+          </div>
+          <p class="gs-section-note gs-reveal" style="margin-top:1.5rem">New: <strong>Simulation Model Review</strong> for Abaqus, ANSYS and COMSOL models, from $300. <a href="./services.html#simulation-review" style="color:var(--gs-primary);font-weight:600">See what is included →</a></p>
+        </div>
+      </section>
+
+      <section class="gs-section" id="what-you-receive">
+        <div class="gs-container">
+          <div class="gs-section-head gs-reveal">
+            <div>
+              <span class="gs-kicker">What You Receive</span>
+              <h2 class="gs-section-title">Deliverables that clarify the problem, the fix, and the path forward.</h2>
+            </div>
+            <div class="gs-section-note">
+              Instead of vague edits, you receive concrete, teachable guidance that helps you revise with confidence.
+            </div>
+          </div>
+
+          <div class="gs-receive-list">
+            <div class="gs-receive-item gs-reveal gs-delay-1">
+              <span class="gs-list-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 12.5 10 15.5l7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+                </svg>
+              </span>
+              <div class="gs-list-copy">Tracked edits/suggestions for clarity and academic tone</div>
+            </div>
+
+            <div class="gs-receive-item gs-reveal gs-delay-2">
+              <span class="gs-list-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 19.5 5 15.5v-7l7-4 7 4v7l-7 4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="m9.5 11.5 1.7 1.7 3.3-3.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="gs-list-copy">Margin comments like a supervisor (what to fix and why)</div>
+            </div>
+
+            <div class="gs-receive-item gs-reveal gs-delay-3">
+              <span class="gs-list-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 5h10M7 10h10M7 15h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  <path d="M17.5 15.5 20 18l-2.5 2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="gs-list-copy">Action Plan (prioritized fixes)</div>
+            </div>
+
+            <div class="gs-receive-item gs-reveal gs-delay-4">
+              <span class="gs-list-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6 6.5h12M6 11.5h12M6 16.5h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                  <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                </svg>
+              </span>
+              <div class="gs-list-copy">Reference/style check (APA/IEEE/Elsevier)</div>
+            </div>
+
+            <div class="gs-receive-item gs-receive-item--wide gs-reveal gs-delay-4">
+              <span class="gs-list-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M8 9.5a4 4 0 1 1 8 0v2.5M7 20l2-5h6l2 5M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <div class="gs-list-copy">Optional 30–60 min Zoom call (tier-based / if needed)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs-section gs-section--tinted" id="who-this-helps">
+        <div class="gs-container">
+          <div class="gs-audience-band gs-reveal">
+            <div class="gs-audience-grid">
+              <div>
+                <span class="gs-kicker">Who This Helps Most</span>
+                <h2 class="gs-section-title">Best suited for students with real drafts, real data, and a deadline that feels too close.</h2>
+                <p class="gs-lead">We work best with MSc/PhD students, especially in Engineering and STEM (civil, agriculture, management/engineering management, materials/energy/mechanical). If you already have a draft and real data/results, we can help you make it stronger and cleaner — fast.</p>
+              </div>
+              <div class="gs-tag-cluster" aria-label="Discipline tags">
+                <span class="gs-tag">Civil</span>
+                <span class="gs-tag">Agriculture</span>
+                <span class="gs-tag">Engineering Management</span>
+                <span class="gs-tag">Materials</span>
+                <span class="gs-tag">Energy</span>
+                <span class="gs-tag">Mechanical</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs-section" id="how-it-works">
+        <div class="gs-container">
+          <div class="gs-section-head gs-reveal">
+            <div>
+              <span class="gs-kicker">How It Works</span>
+              <h2 class="gs-section-title">An elegant, transparent process that starts with diagnosis before full engagement.</h2>
+            </div>
+            <div class="gs-section-note">
+              Pricing logic, timeline expectations, and next steps are clarified early so there are no surprises.
+            </div>
+          </div>
+
+          <div class="gs-process-grid">
+            <article class="gs-process-card gs-reveal gs-delay-1">
+              <div class="gs-step-number" aria-hidden="true">01</div>
+              <h3>Start with the $50 Diagnostic (paid)</h3>
+              <p>The first step is a paid diagnostic review so your draft can be assessed properly before any package is recommended.</p>
+            </article>
+
+            <article class="gs-process-card gs-reveal gs-delay-2">
+              <div class="gs-step-number" aria-hidden="true">02</div>
+              <h3>Submit the intake form + Google Docs link</h3>
+              <p>Share the intake details and working draft so the editorial review can focus on the actual structure, clarity, and readiness of the document.</p>
+            </article>
+
+            <article class="gs-process-card gs-reveal gs-delay-3">
+              <div class="gs-step-number" aria-hidden="true">03</div>
+              <h3>Receive a 1–2 page diagnostic plan (what to fix + timeline + recommended package)</h3>
+              <p>You receive a clear roadmap with the main writing issues, what should be fixed first, expected timing, and the package that fits best.</p>
+            </article>
+
+            <article class="gs-process-card gs-reveal gs-delay-4">
+              <div class="gs-step-number" aria-hidden="true">04</div>
+              <h3>If you book: $50 credited → 50% deposit → delivery → final 50%</h3>
+              <p>The process remains transparent from booking through delivery, with the diagnostic fee credited toward the deposit if you proceed.</p>
+            </article>
+          </div>
+
+          <p class="gs-capacity-note">Capacity is limited: 1–2 chapters/month (minimum 1 week per chapter).</p>
+        </div>
+      </section>
+
+      <section class="gs-section gs-section--tinted" id="academic-integrity">
+        <div class="gs-container">
+          <div class="gs-integrity-wrapper gs-reveal">
+            <div class="gs-integrity-shell">
+              <div class="gs-shield" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3l7 3v5c0 4.5-3 7.9-7 10-4-2.1-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="m9.5 11.8 1.7 1.7 3.6-4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="gs-kicker">Academic Integrity</span>
+              <h2 class="gs-section-title">Academic Integrity (Non-negotiable)</h2>
+              <p class="gs-lead">We provide editing, feedback, formatting, and coaching — not ghostwriting.</p>
+            </div>
+
+            <div class="gs-integrity-grid">
+              <div class="gs-integrity-item">
+                <span class="gs-list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>No writing from scratch</strong>
+                </div>
+              </div>
+
+              <div class="gs-integrity-item">
+                <span class="gs-list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 6.5h8M8 11.5h8M8 16.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <path d="m15.5 14.5 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <circle cx="16" cy="15" r="5" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>No data fabrication</strong>
+                </div>
+              </div>
+
+              <div class="gs-integrity-item">
+                <span class="gs-list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 12h8M8 8h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    <rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>No fake references</strong>
+                </div>
+              </div>
+
+              <div class="gs-integrity-item">
+                <span class="gs-list-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 4a4 4 0 0 1 4 4v1.5a4 4 0 1 1-8 0V8a4 4 0 0 1 4-4ZM5 19.5a7 7 0 0 1 14 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <div>
+                  <strong>You remain the author</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs-section" id="figures-tables">
+        <div class="gs-container">
+          <div class="gs-section-head gs-reveal">
+            <div>
+              <span class="gs-kicker">Figures &amp; Tables</span>
+              <h2 class="gs-section-title">A publication-ready visual layer for papers that already have real results behind them.</h2>
+            </div>
+            <div class="gs-section-note">
+              Visual presentation often influences perceived rigor. Clean figures and tables make good research easier to trust and follow.
+            </div>
+          </div>
+
+          <div class="gs-figures-shell">
+            <article class="gs-panel gs-visual-panel gs-reveal gs-delay-1">
+              <p class="gs-lead">Need publication-ready visuals? We offer figure/table packages for entire papers, including 2D plots, multi-panel figures, and 3D visualization based on your real data or simulation outputs.</p>
+              <div class="gs-visual-diagram" aria-hidden="true">
+                <div class="gs-visual-row">
+                  <div class="gs-plot">
+                    <div class="gs-plot-grid"></div>
+                    <svg viewBox="0 0 320 180" fill="none" preserveAspectRatio="none">
+                      <path d="M24 136C58 126 68 79 104 86C141 93 154 148 193 116C227 88 242 42 296 28" stroke="var(--gs-primary)" stroke-width="4" stroke-linecap="round"/>
+                      <path d="M24 146C67 138 78 108 112 108C150 108 161 138 198 134C234 130 258 112 296 94" stroke="rgba(var(--gs-primary-rgb), 0.5)" stroke-width="4" stroke-linecap="round" opacity="0.95"/>
+                      <circle cx="104" cy="86" r="6" fill="var(--gs-primary)"/>
+                      <circle cx="198" cy="134" r="6" fill="var(--gs-primary-soft)"/>
+                    </svg>
+                  </div>
+                  <div class="gs-table-preview">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Panel</th>
+                          <th>Metric</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>A</td>
+                          <td>Trend clarity</td>
+                        </tr>
+                        <tr>
+                          <td>B</td>
+                          <td>Method labels</td>
+                        </tr>
+                        <tr>
+                          <td>C</td>
+                          <td>Legend cleanup</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <aside class="gs-model-panel gs-reveal gs-delay-2" aria-hidden="true">
+              <svg viewBox="0 0 220 220" fill="none">
+                <rect x="25" y="34" width="74" height="48" rx="16" fill="rgba(var(--gs-primary-rgb), 0.1)" stroke="var(--gs-primary)" stroke-width="2"/>
+                <rect x="122" y="34" width="74" height="48" rx="16" fill="rgba(var(--gs-primary-soft-rgb), 0.8)" stroke="var(--gs-primary-strong)" stroke-width="2"/>
+                <rect x="73" y="140" width="74" height="48" rx="16" fill="rgba(var(--gs-primary-rgb), 0.08)" stroke="var(--gs-primary)" stroke-width="2"/>
+                <path d="M99 82v30m24-30v30m-12 28V112" stroke="var(--gs-neutral-deep)" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="62" cy="58" r="8" fill="var(--gs-primary)"/>
+                <circle cx="159" cy="58" r="8" fill="var(--gs-primary-soft)"/>
+                <circle cx="110" cy="164" r="8" fill="var(--gs-primary)"/>
+                <text x="62" y="63" text-anchor="middle" fill="var(--gs-primary-foreground)" font-size="10" font-family="Inter, sans-serif">2D</text>
+                <text x="159" y="63" text-anchor="middle" fill="var(--gs-primary-strong)" font-size="10" font-family="Inter, sans-serif">MP</text>
+                <text x="110" y="169" text-anchor="middle" fill="var(--gs-primary-foreground)" font-size="10" font-family="Inter, sans-serif">3D</text>
+                <text x="62" y="100" text-anchor="middle" fill="var(--gs-foreground)" font-size="12" font-family="Inter, sans-serif">Plots</text>
+                <text x="159" y="100" text-anchor="middle" fill="var(--gs-foreground)" font-size="12" font-family="Inter, sans-serif">Figures</text>
+                <text x="110" y="206" text-anchor="middle" fill="var(--gs-foreground)" font-size="12" font-family="Inter, sans-serif">Visualization</text>
+              </svg>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="gs-section" id="final-cta">
+        <div class="gs-container">
+          <div class="gs-final-cta gs-reveal">
+            <span class="gs-kicker gs-kicker--inverse">Gateway Scholar</span>
+            <h2>Ready to Start?</h2>
+            <p>Begin with the $50 diagnostic and get a clear roadmap for improving your chapter/paper. If you book a package, the diagnostic fee is credited toward your deposit.</p>
+
+            <div class="gs-final-actions">
+              <a class="gs-button-light" href="#contact">Register Your Project</a>
+              <a class="gs-button-ghost-light" href="#how-it-works">Review the Process</a>
+              <a class="gs-button-ghost-light" href="#figures-tables">Explore Figures &amp; Tables</a>
+            </div>
+
+            <p class="gs-trust-line">No ghostwriting • No fake data • No fake references • You remain the author</p>
+            <p class="gs-contact-line" id="contact">WhatsApp: <a href="https://wa.me/8618552548576">+86 185 5254 8576</a> | WeChat: tamuno23 | Email: <a href="mailto:georgegershom22@gmail.com">georgegershom22@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </div>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js"></script>
+
+    <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .gs-nav-wrap {
+      box-shadow: var(--gs-shadow-soft);
+    }
+
+    .gs-nav-shell {
+      position: relative;
+    }
+
+    .gs-nav-shell::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(var(--gs-primary-rgb), 0.15), transparent);
+      pointer-events: none;
+    }
+
+    .gs-hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .gs-hero::before,
+    .gs-hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(6px);
+    }
+
+    .gs-hero::before {
+      width: 380px;
+      height: 380px;
+      right: -90px;
+      top: -60px;
+      background: radial-gradient(circle, rgba(var(--gs-neutral-warm-rgb), 0.22), transparent 68%);
+    }
+
+    .gs-hero::after {
+      width: 320px;
+      height: 320px;
+      left: -110px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(var(--gs-primary-rgb), 0.1), transparent 68%);
+    }
+
+    .gs-hero-copy .gs-eyebrow {
+      margin-bottom: 1.35rem;
+    }
+
+    .gs-hero-copy > .gs-title {
+      max-width: 12ch;
+    }
+
+    .gs-hero-support {
+      max-width: 60ch;
+      margin-top: 1.2rem;
+      color: var(--gs-foreground);
+      font-size: 1.02rem;
+    }
+
+    .gs-proof-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.12);
+      background: rgba(var(--gs-white-rgb), 0.78);
+      box-shadow: var(--gs-shadow-soft);
+      color: var(--gs-primary);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .gs-proof-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gs-primary);
+      box-shadow: 0 0 0 5px rgba(var(--gs-primary-soft-rgb), 0.38);
+    }
+
+    .gs-hero-visual {
+      padding: 1.35rem 0.6rem 1.15rem;
+    }
+
+    .gs-proof-sheet,
+    .gs-proof-sheet-secondary {
+      position: absolute;
+      z-index: 2;
+      width: min(260px, 44%);
+      padding: 1rem 1rem 0.9rem;
+      border-radius: 18px;
+      background: rgba(var(--gs-neutral-shell-rgb), 0.93);
+      border: 1px solid rgba(var(--gs-neutral-deep-rgb), 0.12);
+      box-shadow: 0 18px 36px rgba(var(--gs-overlay-rgb), 0.11);
+      backdrop-filter: blur(16px);
+    }
+
+    .gs-proof-sheet {
+      top: 1.6rem;
+      left: -1.1rem;
+      transform: rotate(-5deg);
+    }
+
+    .gs-proof-sheet-secondary {
+      right: -0.5rem;
+      bottom: 3.75rem;
+      transform: rotate(4deg);
+    }
+
+    .gs-proof-sheet small,
+    .gs-proof-sheet-secondary small {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--gs-primary);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .gs-proof-sheet p,
+    .gs-proof-sheet-secondary p {
+      margin: 0;
+      color: var(--gs-foreground);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .gs-annotation-line {
+      width: 100%;
+      height: 1px;
+      margin: 0.55rem 0 0.7rem;
+      background: linear-gradient(90deg, rgba(var(--gs-primary-rgb), 0.18), rgba(var(--gs-neutral-warm-rgb), 0.34), transparent);
+    }
+
+    .gs-note-grid {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .gs-note-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.83rem;
+      color: var(--gs-muted);
+    }
+
+    .gs-note-row strong {
+      color: var(--gs-foreground);
+      font-size: 0.83rem;
+    }
+
+    .gs-mark {
+      padding: 0.14rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(var(--gs-primary-rgb), 0.09);
+      color: var(--gs-primary);
+      font-weight: 700;
+    }
+
+    .gs-mark--soft {
+      background: rgba(var(--gs-primary-soft-rgb), 0.88);
+      color: var(--gs-primary-strong);
+    }
+
+    .gs-hero-card {
+      min-height: 620px;
+    }
+
+    .gs-hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 1.1rem;
+      z-index: 1;
+      border: 1px solid rgba(var(--gs-white-rgb), 0.18);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .gs-card-accent {
+      position: absolute;
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.15rem;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(var(--gs-overlay-rgb), 0.72), rgba(var(--gs-overlay-soft-rgb), 0.54));
+      border: 1px solid rgba(var(--gs-white-rgb), 0.12);
+      color: rgba(var(--gs-neutral-shell-rgb), 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .gs-card-accent strong {
+      display: block;
+      margin-bottom: 0.18rem;
+      font-size: 0.9rem;
+    }
+
+    .gs-card-accent span {
+      color: rgba(var(--gs-neutral-shell-rgb), 0.82);
+      font-size: 0.82rem;
+    }
+
+    .gs-section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(250px, 0.7fr);
+      gap: 1.5rem;
+      align-items: end;
+      margin-bottom: 2.25rem;
+    }
+
+    .gs-section-note {
+      padding: 1rem 1.15rem;
+      border-left: 3px solid rgba(var(--gs-primary-rgb), 0.32);
+      background: rgba(var(--gs-white-rgb), 0.68);
+      border-radius: 0 16px 16px 0;
+      box-shadow: var(--gs-shadow-soft);
+      color: var(--gs-muted);
+      font-size: 0.96rem;
+    }
+
+    .gs-intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 1.45rem;
+      align-items: stretch;
+    }
+
+    .gs-editorial-panel {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(var(--gs-white-rgb), 0.86), rgba(var(--gs-neutral-shell-rgb), 0.92)),
+        var(--gs-surface);
+    }
+
+    .gs-editorial-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(var(--gs-neutral-warm-rgb), 0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .gs-quote-block {
+      margin: 0;
+      padding: 1.6rem;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(var(--gs-primary-rgb), 0.1), rgba(var(--gs-white-rgb), 0.8));
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.12);
+    }
+
+    .gs-quote-block p {
+      margin: 0 0 0.8rem;
+      color: var(--gs-foreground);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      line-height: 1.35;
+    }
+
+    .gs-quote-block span {
+      color: var(--gs-muted);
+      font-size: 0.92rem;
+    }
+
+    .gs-mini-points {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.3rem;
+    }
+
+    .gs-mini-point {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(var(--gs-white-rgb), 0.75);
+      border: 1px solid var(--gs-border);
+    }
+
+    .gs-mini-point strong {
+      display: block;
+      margin-bottom: 0.12rem;
+      color: var(--gs-foreground);
+    }
+
+    .gs-mini-point p {
+      margin: 0;
+      color: var(--gs-muted);
+      font-size: 0.94rem;
+    }
+
+    .gs-bullet-dot {
+      width: 12px;
+      height: 12px;
+      margin-top: 0.45rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gs-primary-strong), var(--gs-primary-soft));
+      flex: 0 0 auto;
+    }
+
+    .gs-card h3,
+    .gs-process-card h3 {
+      font-size: 1.4rem;
+      line-height: 1.15;
+    }
+
+    .gs-card p,
+    .gs-process-card p {
+      font-size: 0.98rem;
+    }
+
+    .gs-card-footer {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(var(--gs-primary-rgb), 0.1);
+      color: var(--gs-primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .gs-receive-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gs-receive-item {
+      min-height: 100%;
+    }
+
+    .gs-receive-item--wide {
+      grid-column: 1 / -1;
+    }
+
+    .gs-audience-band {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 4vw, 2.8rem);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(var(--gs-neutral-warm-rgb), 0.24), transparent 30%),
+        linear-gradient(135deg, rgba(var(--gs-white-rgb), 0.84), rgba(var(--gs-neutral-warm-rgb), 0.52));
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.1);
+      box-shadow: var(--gs-shadow);
+    }
+
+    .gs-audience-band::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.07);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    .gs-audience-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.72fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .gs-tag-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: flex-end;
+    }
+
+    .gs-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 1rem;
+      border-radius: 999px;
+      background: rgba(var(--gs-white-rgb), 0.84);
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.11);
+      color: var(--gs-primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+      box-shadow: var(--gs-shadow-soft);
+    }
+
+    .gs-process-grid {
+      align-items: stretch;
+    }
+
+    .gs-process-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(var(--gs-primary-rgb), 0.92), rgba(var(--gs-primary-soft-rgb), 0.58));
+    }
+
+    .gs-process-card p strong {
+      color: var(--gs-foreground);
+    }
+
+    .gs-integrity-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: clamp(2rem, 4.5vw, 3rem);
+      background:
+        radial-gradient(circle at top left, rgba(var(--gs-neutral-warm-rgb), 0.22), transparent 34%),
+        linear-gradient(180deg, rgba(var(--gs-white-rgb), 0.9), rgba(var(--gs-neutral-warm-rgb), 0.52));
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.11);
+      box-shadow: var(--gs-shadow);
+    }
+
+    .gs-integrity-grid {
+      margin-top: 2rem;
+    }
+
+    .gs-integrity-item strong {
+      display: block;
+      margin-bottom: 0.12rem;
+      color: var(--gs-foreground);
+    }
+
+    .gs-figures-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.75fr);
+      gap: 1.45rem;
+      align-items: stretch;
+    }
+
+    .gs-visual-panel {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      background:
+        linear-gradient(155deg, rgba(var(--gs-primary-rgb), 0.07), rgba(var(--gs-white-rgb), 0.82)),
+        rgba(var(--gs-white-rgb), 0.78);
+    }
+
+    .gs-visual-diagram {
+      display: grid;
+      gap: 0.95rem;
+      margin-top: 1.4rem;
+    }
+
+    .gs-visual-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0.95rem;
+    }
+
+    .gs-plot,
+    .gs-table-preview,
+    .gs-model-panel {
+      border-radius: 18px;
+      border: 1px solid rgba(var(--gs-primary-rgb), 0.12);
+      background: rgba(var(--gs-white-rgb), 0.86);
+      box-shadow: var(--gs-shadow-soft);
+    }
+
+    .gs-plot {
+      position: relative;
+      min-height: 180px;
+      padding: 1rem;
+    }
+
+    .gs-plot-grid {
+      position: absolute;
+      inset: 1rem;
+      background:
+        linear-gradient(rgba(var(--gs-primary-rgb), 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--gs-primary-rgb), 0.08) 1px, transparent 1px);
+      background-size: 42px 42px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .gs-plot svg {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 160px;
+    }
+
+    .gs-table-preview {
+      padding: 1rem;
+    }
+
+    .gs-table-preview table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .gs-table-preview th,
+    .gs-table-preview td {
+      padding: 0.55rem 0.4rem;
+      border-bottom: 1px solid rgba(var(--gs-primary-rgb), 0.08);
+      text-align: left;
+    }
+
+    .gs-table-preview th {
+      color: var(--gs-primary);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .gs-model-panel {
+      display: grid;
+      place-items: center;
+      min-height: 100%;
+      padding: 1.2rem;
+    }
+
+    .gs-model-panel svg {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+    }
+
+    .gs-contact-line a {
+      text-decoration: underline;
+      text-decoration-color: rgba(var(--gs-white-rgb), 0.38);
+      text-underline-offset: 0.18em;
+    }
+
+    .gs-footer a {
+      color: var(--gs-primary);
+      text-decoration: underline;
+      text-decoration-color: rgba(var(--gs-primary-rgb), 0.22);
+      text-underline-offset: 0.16em;
+    }
+
+    .gs-kicker--inverse {
+      color: rgba(var(--gs-neutral-shell-rgb), 0.78);
+    }
+
+    @media (max-width: 1080px) {
+      .gs-section-head,
+      .gs-intro-grid,
+      .gs-audience-grid,
+      .gs-figures-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .gs-tag-cluster {
+        justify-content: flex-start;
+      }
+
+      .gs-proof-sheet {
+        left: 0.35rem;
+      }
+
+      .gs-proof-sheet-secondary {
+        right: 0.45rem;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .gs-receive-list {
+        grid-template-columns: 1fr;
+      }
+
+      .gs-receive-item--wide {
+        grid-column: auto;
+      }
+
+      .gs-visual-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .gs-hero {
+        min-height: auto;
+      }
+
+      .gs-hero-copy > .gs-title {
+        max-width: none;
+      }
+
+      .gs-proof-ribbon {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .gs-hero-card {
+        min-height: 420px;
+      }
+
+      .gs-proof-sheet,
+      .gs-proof-sheet-secondary {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin: 1rem 0 0;
+      }
+
+      .gs-card-accent {
+        position: static;
+        margin: 1rem;
+      }
+
+      .gs-audience-band,
+      .gs-integrity-wrapper,
+      .gs-final-cta {
+        border-radius: 24px;
+      }
+    }
+  </style>
+</body>
+</html>
