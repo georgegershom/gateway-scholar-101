@@ -1159,63 +1159,38 @@ button,
           <div class="gs-figures-shell">
             <article class="gs-panel gs-visual-panel gs-reveal gs-delay-1">
               <p class="gs-lead">Need publication-ready visuals? We offer figure/table packages for entire papers, including 2D plots, multi-panel figures, and 3D visualization based on your real data or simulation outputs.</p>
-              <div class="gs-visual-diagram" aria-hidden="true">
-                <div class="gs-visual-row">
-                  <div class="gs-plot">
-                    <div class="gs-plot-grid"></div>
-                    <svg viewBox="0 0 320 180" fill="none" preserveAspectRatio="none">
-                      <path d="M24 136C58 126 68 79 104 86C141 93 154 148 193 116C227 88 242 42 296 28" stroke="var(--gs-primary)" stroke-width="4" stroke-linecap="round"/>
-                      <path d="M24 146C67 138 78 108 112 108C150 108 161 138 198 134C234 130 258 112 296 94" stroke="rgba(var(--gs-primary-rgb), 0.5)" stroke-width="4" stroke-linecap="round" opacity="0.95"/>
-                      <circle cx="104" cy="86" r="6" fill="var(--gs-primary)"/>
-                      <circle cx="198" cy="134" r="6" fill="var(--gs-primary-soft)"/>
-                    </svg>
-                  </div>
-                  <div class="gs-table-preview">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Panel</th>
-                          <th>Metric</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>A</td>
-                          <td>Trend clarity</td>
-                        </tr>
-                        <tr>
-                          <td>B</td>
-                          <td>Method labels</td>
-                        </tr>
-                        <tr>
-                          <td>C</td>
-                          <td>Legend cleanup</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              <div class="gs-teaser-work">
+                <figure>
+                  <a href="./figures-tables.html#sample-work"><img src="../assets/work-fe-vs-rom-thumb.jpg" alt="Six-panel figure comparing 200 finite-element runs with a reduced-order model" loading="lazy"></a>
+                  <figcaption>2D plots &amp; multi-panel figures</figcaption>
+                </figure>
+                <figure>
+                  <a href="./figures-tables.html#sample-work"><img src="../assets/work-results-table-thumb.jpg" alt="Publication-style results table" loading="lazy"></a>
+                  <figcaption>Publication-style tables</figcaption>
+                </figure>
               </div>
+              <a class="gs-teaser-link" href="./figures-tables.html#sample-work">See all sample work →</a>
             </article>
 
-            <aside class="gs-model-panel gs-reveal gs-delay-2" aria-hidden="true">
-              <svg viewBox="0 0 220 220" fill="none">
-                <rect x="25" y="34" width="74" height="48" rx="16" fill="rgba(var(--gs-primary-rgb), 0.1)" stroke="var(--gs-primary)" stroke-width="2"/>
-                <rect x="122" y="34" width="74" height="48" rx="16" fill="rgba(var(--gs-primary-soft-rgb), 0.8)" stroke="var(--gs-primary-strong)" stroke-width="2"/>
-                <rect x="73" y="140" width="74" height="48" rx="16" fill="rgba(var(--gs-primary-rgb), 0.08)" stroke="var(--gs-primary)" stroke-width="2"/>
-                <path d="M99 82v30m24-30v30m-12 28V112" stroke="var(--gs-neutral-deep)" stroke-width="2.2" stroke-linecap="round"/>
-                <circle cx="62" cy="58" r="8" fill="var(--gs-primary)"/>
-                <circle cx="159" cy="58" r="8" fill="var(--gs-primary-soft)"/>
-                <circle cx="110" cy="164" r="8" fill="var(--gs-primary)"/>
-                <text x="62" y="63" text-anchor="middle" fill="var(--gs-primary-foreground)" font-size="10" font-family="Inter, sans-serif">2D</text>
-                <text x="159" y="63" text-anchor="middle" fill="var(--gs-primary-strong)" font-size="10" font-family="Inter, sans-serif">MP</text>
-                <text x="110" y="169" text-anchor="middle" fill="var(--gs-primary-foreground)" font-size="10" font-family="Inter, sans-serif">3D</text>
-                <text x="62" y="100" text-anchor="middle" fill="var(--gs-foreground)" font-size="12" font-family="Inter, sans-serif">Plots</text>
-                <text x="159" y="100" text-anchor="middle" fill="var(--gs-foreground)" font-size="12" font-family="Inter, sans-serif">Figures</text>
-                <text x="110" y="206" text-anchor="middle" fill="var(--gs-foreground)" font-size="12" font-family="Inter, sans-serif">Visualization</text>
-              </svg>
+            <aside class="gs-panel gs-teaser-3d gs-reveal gs-delay-2">
+              <figure>
+                <a href="./figures-tables.html#sample-work"><img src="../assets/work-fe-contours-thumb.jpg" alt="3D finite-element stress contours at five rubber contents" loading="lazy"></a>
+                <figcaption>3D simulation contours</figcaption>
+              </figure>
+              <figure>
+                <a href="./figures-tables.html#sample-work"><img src="../assets/work-3d-surfaces-thumb.jpg" alt="Sensitivity bars and 3D response surfaces from a machine-learning model" loading="lazy"></a>
+                <figcaption>3D response surfaces &amp; sensitivity plots</figcaption>
+              </figure>
             </aside>
           </div>
+          <style>
+            .gs-teaser-work { display:grid; grid-template-columns:1fr; gap:1rem; margin-top:1.5rem; }
+            .gs-teaser-work figure, .gs-teaser-3d figure { margin:0; }
+            .gs-teaser-work img, .gs-teaser-3d img { display:block; width:100%; height:auto; border-radius:var(--gs-radius-sm); border:1px solid var(--gs-border); background:#fff; }
+            .gs-teaser-work figcaption, .gs-teaser-3d figcaption { margin-top:0.5rem; font-size:0.88rem; color:var(--gs-muted); }
+            .gs-teaser-link { display:inline-block; margin-top:1.25rem; color:var(--gs-primary); font-weight:600; }
+            .gs-teaser-3d { display:flex; flex-direction:column; justify-content:center; gap:2rem; }
+          </style>
         </div>
       </section>
 
