@@ -1,0 +1,454 @@
+{
+  "project": {
+    "name": "Gateway Scholar",
+    "path": "c:\\Users\\georg\\Downloads\\machine la\\gateway-scholar-editorial-redesign",
+    "operation": "create",
+    "deviceType": "desktop",
+    "language": "en",
+    "dashboardMode": false,
+    "replicationMode": null,
+    "sourceUrl": null,
+    "visualSpecExcerpt": null,
+    "styleDefinitionBrief": "Warm editorial academic authority with paper-like surfaces, forest green trust cues, selective muted gold highlights, and refined serif-sans typography contrast.",
+    "designRead": "Academic support landing / MSc & PhD STEM students / editorial trust and supervisor credibility / medium-low density / avoid generic SaaS gloss",
+    "designDials": {
+      "layoutVariance": 4,
+      "motionIntensity": 2,
+      "visualDensity": 2
+    },
+    "styleContinuityAnchors": {
+      "colorSystem": {
+        "primaryColorRole": "Deep forest green carries trust, structure, and all major calls to action.",
+        "brandHuePolicy": "Soft ivory neutrals dominate large surfaces; muted gold is an explicit premium highlight requested by the user and should be used sparingly for dividers, proof cues, and emphasis.",
+        "stateColors": "Not emphasized in this landing page."
+      },
+      "shapeSystem": "Rounded editorial panels with soft pill buttons; cards feel tailored and premium rather than playful.",
+      "typographySystem": "Playfair Display for headings and Inter for interface, navigation, buttons, and body text.",
+      "spacingSystem": "Generous vertical rhythm with calm section breaks, wide breathing room, and strong alignment lines.",
+      "componentLanguage": "Glass-tinted ivory cards, proof chips, badge-like notes, premium CTAs, and structured content blocks.",
+      "surfaceAndDepth": "Paper-like surfaces with soft shadows and fine warm borders; no heavy neon or glossy tech effects.",
+      "imageryAndIconography": "Editorial hero photography, clean line icons, and subtle premium highlights.",
+      "interactionTone": "Measured, refined hover lift and fade-up reveals rather than loud motion."
+    },
+    "sharedProjectShellContract": null,
+    "generationTree": null
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "libraryIdentity": {
+      "name": null,
+      "id": null,
+      "version": null,
+      "scope": null,
+      "path": null,
+      "versionSource": null
+    },
+    "cssFilePath": "c:\\Users\\georg\\Downloads\\machine la\\gateway-scholar-editorial-redesign\\colors_and_type.css",
+    "brandPrefix": "gs",
+    "themeMode": "light",
+    "designDecisionSummary": "Editorial, premium, warm, and trustworthy academic landing page with one polished long-form homepage.",
+    "componentContractKind": "free-explore",
+    "forbiddenInventedComponents": [],
+    "allowedComponents": [
+      "hero",
+      "feature-card",
+      "process-card",
+      "integrity-list",
+      "cta-band"
+    ],
+    "styleConstraints": {
+      "radiusMax": 28,
+      "spacingBase": 8,
+      "fontSizeBody": 18,
+      "fontSizeMin": 14,
+      "controlHeightDefault": 56,
+      "controlHeightLarge": 60
+    },
+    "productContext": {
+      "kitType": "editorial-academic-landing",
+      "productType": "Academic editing and supervisor-style thesis support service"
+    },
+    "actualTokenNameReference": []
+  },
+  "pages": [
+    {
+      "nodeId": "page-index",
+      "slug": "index",
+      "title": "Home",
+      "htmlSrc": "pages/index.html",
+      "pageIndex": 1,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "showcase",
+      "businessScenario": "Premium landing page for Gateway Scholar academic editing and thesis support.",
+      "visualNorthStar": "Make the page feel like an elite academic advisory service: warm, authoritative, human, and immediately trustworthy.",
+      "compositionPattern": "Editorial cover layout with layered proof notes and alternating evidence blocks.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "hero with layered proof cards",
+        "feature grid",
+        "deliverables list",
+        "process cards",
+        "integrity proof block",
+        "final CTA band"
+      ],
+      "imagePlan": [
+        "hero-main.jpg"
+      ],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "hero copy could feel dense if hierarchy is weak",
+        "service blocks must avoid generic SaaS-card sameness"
+      ]
+    },
+    {
+      "nodeId": "page-services",
+      "slug": "services",
+      "title": "Services",
+      "htmlSrc": "pages/services.html",
+      "pageIndex": 2,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "showcase",
+      "businessScenario": "Public services overview page for thesis, journal, formatting, and figure support.",
+      "visualNorthStar": "Structured editorial service architecture with calm authority and restrained conversion.",
+      "compositionPattern": "Alternating editorial panels and content stacks.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "service cards",
+        "content stacks",
+        "cta row"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "service copy repetition",
+        "generic feature card tone"
+      ]
+    },
+    {
+      "nodeId": "page-figures-tables",
+      "slug": "figures-tables",
+      "title": "Figures & Tables",
+      "htmlSrc": "pages/figures-tables.html",
+      "pageIndex": 3,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "showcase",
+      "businessScenario": "Specialist page for figure polishing, table cleanup, and publication-ready visual preparation.",
+      "visualNorthStar": "Make technical visual support feel precise, premium, and editorially dependable.",
+      "compositionPattern": "Proof-led feature sequence with supporting detail stacks.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "service hero",
+        "before-after proof blocks",
+        "deliverables grid",
+        "cta band"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "visual claims need concrete proof framing",
+        "before-after sections could feel repetitive"
+      ]
+    },
+    {
+      "nodeId": "page-register",
+      "slug": "register",
+      "title": "Register Your Project",
+      "htmlSrc": "pages/register.html",
+      "pageIndex": 4,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "conversion",
+      "businessScenario": "Lead capture page for students or researchers registering an editing or thesis-support project.",
+      "visualNorthStar": "Lower submission friction while preserving premium trust and academic seriousness.",
+      "compositionPattern": "Form-led conversion layout with adjacent reassurance content.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "registration form",
+        "expectation checklist",
+        "trust notes",
+        "secondary CTA"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "form density could feel high",
+        "trust copy must not sound generic"
+      ]
+    },
+    {
+      "nodeId": "page-book-a-call",
+      "slug": "book-a-call",
+      "title": "Book a Call",
+      "htmlSrc": "pages/book-a-call.html",
+      "pageIndex": 5,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "conversion",
+      "businessScenario": "Consultation booking page for prospective clients seeking project fit and timeline guidance.",
+      "visualNorthStar": "Create calm, concierge-style scheduling confidence with minimal friction.",
+      "compositionPattern": "Scheduler-first composition with supporting advisory notes and assurances.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "booking panel",
+        "process summary",
+        "advisory faq",
+        "contact fallback"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "booking page can feel sparse without supporting context",
+        "calendar embedding assumptions may limit layout flexibility"
+      ]
+    },
+    {
+      "nodeId": "page-contact",
+      "slug": "contact",
+      "title": "Contact",
+      "htmlSrc": "pages/contact.html",
+      "pageIndex": 6,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "utility",
+      "businessScenario": "Direct contact page for enquiries, project clarifications, and support follow-up.",
+      "visualNorthStar": "Feel personal, responsive, and credible without losing the premium editorial tone.",
+      "compositionPattern": "Compact contact stack with channel cards and reassurance notes.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "contact methods",
+        "response-time notes",
+        "support form"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "too many contact options may dilute the primary action",
+        "utility content could feel visually under-designed"
+      ]
+    },
+    {
+      "nodeId": "page-policies",
+      "slug": "policies",
+      "title": "Policies",
+      "htmlSrc": "pages/policies.html",
+      "pageIndex": 7,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "legal",
+      "businessScenario": "Consolidated policy overview page covering service terms, conduct, and usage expectations.",
+      "visualNorthStar": "Present legal and operational policy content with clarity, calm structure, and editorial polish.",
+      "compositionPattern": "Long-form legal content frame with anchored sections and summary callouts.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "section navigation",
+        "policy summaries",
+        "long-form content blocks"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "dense policy text may overwhelm scanning",
+        "summary callouts must not distort legal meaning"
+      ]
+    },
+    {
+      "nodeId": "page-privacy",
+      "slug": "privacy",
+      "title": "Privacy",
+      "htmlSrc": "pages/privacy.html",
+      "pageIndex": 8,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "legal",
+      "businessScenario": "Privacy disclosure page explaining data handling, storage, and client confidentiality expectations.",
+      "visualNorthStar": "Reassure users about confidentiality and stewardship through elegant, readable privacy communication.",
+      "compositionPattern": "Disclosure-led legal layout with concise summaries above detailed sections.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "privacy highlights",
+        "data handling sections",
+        "contact escalation note"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "privacy summaries could oversimplify compliance details",
+        "confidentiality messaging must remain precise"
+      ]
+    },
+    {
+      "nodeId": "page-cookies",
+      "slug": "cookies",
+      "title": "Cookies",
+      "htmlSrc": "pages/cookies.html",
+      "pageIndex": 9,
+      "stateGroupId": null,
+      "stateRole": null,
+      "baseStatePageId": null,
+      "sharedShellContract": [],
+      "mutableRegions": [],
+      "derivedFromHtmlSrc": null,
+      "derivationType": "original",
+      "sourcePageId": null,
+      "sourceHtmlSrc": null,
+      "pageType": "legal",
+      "businessScenario": "Cookie policy page outlining tracking categories, consent expectations, and browser control options.",
+      "visualNorthStar": "Make consent-related information transparent, calm, and easy to scan.",
+      "compositionPattern": "Structured policy explainer with category breakdowns and control guidance.",
+      "continuityAnchors": [
+        "paper-like ivory surfaces",
+        "forest green premium CTA system",
+        "serif headline plus sans interface pairing",
+        "measured shadow and border discipline"
+      ],
+      "libraryRestraintMode": false,
+      "uiKitPath": null,
+      "componentPlan": [
+        "cookie categories",
+        "consent guidance",
+        "browser controls notes"
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false,
+      "qualityRisks": [
+        "policy categories can become repetitive",
+        "browser guidance must stay current and specific"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "filename": "hero-main.jpg",
+      "role": "critical-hero",
+      "owningPage": "index",
+      "semanticDescription": "Editorial academic workspace image with warm natural light, thesis pages, premium study mood, and professional focus.",
+      "status": "generated"
+    }
+  ],
+  "wiringPlan": [],
+  "hiddenInteractionPlan": []
+}
