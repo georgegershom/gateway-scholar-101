@@ -63,6 +63,7 @@ assert(indexHtml.includes('services.html#simulation-review'), 'Home page missing
 
 for (const page of ['index', 'services', 'figures-tables', 'register', 'book-a-call', 'contact', 'policies', 'privacy', 'cookies']) {
   const html = read(`pages/${page}.html`);
+  assert(!html.includes('<title>Untitled</title>'), `pages/${page}.html has no page title`);
   assert(!/This page should|Contact details should|The tone should|language should stay|policies should feel|Privacy should match|this page is built/.test(html), `pages/${page}.html shows an internal design note to visitors`);
 }
 
