@@ -58,4 +58,12 @@ assert(privacyHtml.includes('what information may be shared by users'), 'Privacy
 const cookiesHtml = read('pages/cookies.html');
 assert(cookiesHtml.includes('primarily informational'), 'Cookies page missing static-site explanation');
 
+assert(servicesHtml.includes('id="simulation-review"'), 'Services page missing Simulation Model Review section');
+assert(indexHtml.includes('services.html#simulation-review'), 'Home page missing link to Simulation Model Review');
+
+for (const page of ['index', 'services', 'figures-tables', 'register', 'book-a-call', 'contact', 'policies', 'privacy', 'cookies']) {
+  const html = read(`pages/${page}.html`);
+  assert(!/This page should|Contact details should|The tone should|language should stay|policies should feel|Privacy should match|this page is built/.test(html), `pages/${page}.html shows an internal design note to visitors`);
+}
+
 console.log('verify-pages: foundation checks passed');
