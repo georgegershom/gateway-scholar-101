@@ -32,6 +32,8 @@ assert(servicesHtml.includes('data-site-header'), 'Services page missing shared 
 const figuresHtml = read('pages/figures-tables.html');
 assert(figuresHtml.includes('Need publication-ready visuals?'), 'Figures page missing approved teaser copy');
 assert(figuresHtml.includes('user-provided data'), 'Figures page missing data integrity language');
+assert((figuresHtml.match(/class="gs-work"/g) || []).length === 8, 'Figures page should show 8 sample-work figures');
+assert(figuresHtml.includes('zenodo.4056538'), 'Figures page missing dataset credit');
 assert(figuresHtml.includes('data-site-footer'), 'Figures page missing shared footer mount');
 
 const registerHtml = read('pages/register.html');

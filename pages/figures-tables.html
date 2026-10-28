@@ -734,6 +734,60 @@ button,
         </div>
       </section>
 
+      <section class="gs-section" id="sample-work">
+        <style>
+          .gs-work-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin-top:1.5rem; }
+          .gs-work { margin:0; border:1px solid var(--gs-border); border-radius:var(--gs-radius-md); background:rgba(255,255,255,0.8); box-shadow:var(--gs-shadow-soft); overflow:hidden; display:flex; flex-direction:column; }
+          .gs-work a { display:block; background:#fff; }
+          .gs-work img { display:block; width:100%; height:auto; aspect-ratio:auto; }
+          .gs-work figcaption { padding:1rem 1.25rem 1.25rem; display:flex; flex-direction:column; gap:0.35rem; border-top:1px solid var(--gs-border); }
+          .gs-work figcaption strong { color:var(--gs-foreground); font-size:1rem; }
+          .gs-work figcaption span { color:var(--gs-muted); font-size:0.92rem; line-height:1.5; }
+          .gs-work__credit { margin:0.25rem 0 0; font-size:0.8rem; color:var(--gs-muted); }
+          .gs-work__credit a { display:inline; background:none; color:var(--gs-primary); text-decoration:underline; }
+          @media (max-width: 760px) { .gs-work-grid { grid-template-columns:1fr; } }
+        </style>
+        <div class="gs-container gs-page-stack">
+          <span class="gs-kicker">Sample work</span>
+          <h2 class="gs-section-title">Examples of figures and tables we have prepared</h2>
+          <p class="gs-lead">Real examples from finite-element simulations, statistical models and microstructure data. Click any figure to see it full size.</p>
+          <div class="gs-work-grid">
+            <figure class="gs-work">
+              <a href="../assets/work-fe-contours.jpg" target="_blank" rel="noopener"><img src="../assets/work-fe-contours.jpg" alt="3D finite-element contours: ANSYS stress contours of a concrete RVE at five rubber contents, with a validation curve against an analytical model." loading="lazy"></a>
+              <figcaption><strong>3D finite-element contours</strong><span>ANSYS stress contours of a concrete RVE at five rubber contents, with a validation curve against an analytical model.</span></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-fe-vs-rom.jpg" target="_blank" rel="noopener"><img src="../assets/work-fe-vs-rom.jpg" alt="Multi-panel comparison (a–f): Six-panel figure comparing 200 finite-element runs with a reduced-order model: parity plots, distributions and trends." loading="lazy"></a>
+              <figcaption><strong>Multi-panel comparison (a–f)</strong><span>Six-panel figure comparing 200 finite-element runs with a reduced-order model: parity plots, distributions and trends.</span></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-microstructure.jpg" target="_blank" rel="noopener"><img src="../assets/work-microstructure.jpg" alt="Microstructure rendering: Segmented cross-sections of six Ni-YSZ anode volumes, pristine vs redox-cycled." loading="lazy"></a>
+              <figcaption><strong>Microstructure rendering</strong><span>Segmented cross-sections of six Ni-YSZ anode volumes, pristine vs redox-cycled.</span><p class="gs-work__credit">Data: public FIB-SEM dataset, <a href="https://doi.org/10.5281/zenodo.4056538" target="_blank" rel="noopener">Zenodo 10.5281/zenodo.4056538</a> (CC BY 4.0).</p></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-3d-surfaces.jpg" target="_blank" rel="noopener"><img src="../assets/work-3d-surfaces.jpg" alt="3D response surfaces: Sensitivity analysis and 3D partial-dependence surfaces from a machine-learning model of concrete strength." loading="lazy"></a>
+              <figcaption><strong>3D response surfaces</strong><span>Sensitivity analysis and 3D partial-dependence surfaces from a machine-learning model of concrete strength.</span><p class="gs-work__credit">Model trained on a dataset compiled from published studies.</p></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-heatmaps.jpg" target="_blank" rel="noopener"><img src="../assets/work-heatmaps.jpg" alt="Annotated heatmaps and curves: Dense four-panel statistics figure: annotated heatmap, grouped bars and log-scale curves." loading="lazy"></a>
+              <figcaption><strong>Annotated heatmaps and curves</strong><span>Dense four-panel statistics figure: annotated heatmap, grouped bars and log-scale curves.</span></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-campaign-scatter.jpg" target="_blank" rel="noopener"><img src="../assets/work-campaign-scatter.jpg" alt="Large-dataset scatter panels: Colour-coded scatter panels summarising a 480-run Abaqus simulation campaign." loading="lazy"></a>
+              <figcaption><strong>Large-dataset scatter panels</strong><span>Colour-coded scatter panels summarising a 480-run Abaqus simulation campaign.</span></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-schematic.jpg" target="_blank" rel="noopener"><img src="../assets/work-schematic.jpg" alt="Methods schematic: Four-panel methods figure: workflow, specimen sketch, thermal schedule and model structure." loading="lazy"></a>
+              <figcaption><strong>Methods schematic</strong><span>Four-panel methods figure: workflow, specimen sketch, thermal schedule and model structure.</span></figcaption>
+            </figure>
+            <figure class="gs-work">
+              <a href="../assets/work-results-table.jpg" target="_blank" rel="noopener"><img src="../assets/work-results-table.jpg" alt="Results table: Publication-style summary table comparing finite-element and reduced-order model results." loading="lazy"></a>
+              <figcaption><strong>Results table</strong><span>Publication-style summary table comparing finite-element and reduced-order model results.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section class="gs-section">
         <div class="gs-container gs-page-stack">
           <h2 class="gs-section-title">Suitable source materials</h2>
